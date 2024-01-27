@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const uri = 'mongodb://localhost:27017/clubnest_data';
 
-exports.connectMongodb=()=>{
+const connectMongodb=()=>{
     mongoose.connect(uri,{})
     .then(e=>{
         process.stdout.write(`Connect to MongoDB Successfully: ${e.connection.port}`)
@@ -11,9 +11,8 @@ exports.connectMongodb=()=>{
     })
 }
 
-
-
-const CodingClub = new mongoose.Schema({
+// coding club schema
+const CodingClubSchema = new mongoose.Schema({
     name_of_events: {
         type: String,
         required: true,
@@ -26,10 +25,7 @@ const CodingClub = new mongoose.Schema({
         type: String,
         required: true,
     },
-    date_of_event: {
-        type: Date,
-        required: true,
-    },
+
     Details_of_prizes_won: {
         type: String,
     },
@@ -46,5 +42,12 @@ const CodingClub = new mongoose.Schema({
     }
 });
 
+const CodingClub = mongoose.model("CodingClub", CodingClubSchema);
 
-exports.User = mongoose.model("CodingClub", CodingClub);
+
+// ai schema
+
+module.exports = {
+    CodingClub: CodingClub,
+    connectMongodb:connectMongodb
+};
