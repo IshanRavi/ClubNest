@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Club Data</title>
+    <style>
+        
+        input{
+            display: block;
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex;height: 100vh;justify-content: center;flex-direction: column; align-items: center;">
+        <form action="http://localhost:3000/coding-club" method="post" enctype="multipart/form-data" >
+            <input type="text" placeholder="Enter name of Events" name="name_of_events" required>
+            <input type="text" placeholder="name of Host name_of_host_institute" name="name_of_host_institute" required>
+            <input type="text" placeholder="Number of studnet " name="no_of_student_of_participated_in_event" required>
+            <input type="text" placeholder="Details_of_prizes_won" name="Details_of_prizes_won" required>
+            <input type="text" placeholder="Venue" name="Venue" required> 
+            <input type="text" placeholder="Speaker" name="Speaker" required>
+            <input type="text" placeholder="Objective" name="Objective" required>
+            <input type="file" placeholder="Please upload your Coding club image" name="dispImage">
+        <button type="submit">Submit Data</button>
+     </form>
+    </div>
+</body>
+</html>
